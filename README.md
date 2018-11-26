@@ -35,12 +35,12 @@ velocity of one object with respect to another determines whether the object
 collides with the other object, goes into orbit, or flies off into space. 
 We used the following conditions to choose our initial velocity values: 
 
-![Velocity Conditions](Velocity Conditions.png)
+![Velocity Conditions](Velocity_conditions.png)
 
 The following known values were used in our calculations:  
-**M** (sun) =   
-**m** (jupiter)=   
-**G** (constant)=   
-**r** (semi-major axis)= 
+**M** (sun) = 1.989e30 kg  
+**m** (jupiter) = 1.898e27 kg      
+**G** (constant) = 6.67408e-11 m^3 kg^-1 s^-2  
+**r** (semi-major axis) = 7.4052e11 m
 
 
