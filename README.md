@@ -27,7 +27,7 @@ animations for five different orbit types:
 The condition which determined which orbit Jupiter would follow was the initial 
 velocity. For all of these orbits, we kept the initial x-position constant at
 x0 = 7.4052e11, which is the semi-major axis of Jupiter's known orbit. As you can 
-see in the animations (all of which are saved as .mp4 files), changing the
+see in the animations (all of which are saved in `Orbit Animations`), changing the
 initial velocity drastically changes which path Jupiter takes as it orbits the sun.
 
 The chosen initial velocity values are not arbitrary. We knew that The tangential 
