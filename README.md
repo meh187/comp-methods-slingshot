@@ -25,7 +25,7 @@ The equations of motion for a planetary orbits are given by second order
 differential equations which can be derived from the force of gravitational
 attraction between two celestial bodies:
 
-![ODEs](ODE.png){:height="20px" width="20px"}
+![ODEs](ODE.png)
 
 The two second order ODEs outlined in red were solved using the 4th order Runga 
 Kutta Method. This method was chosen over others because there is a minimal loss 
