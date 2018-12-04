@@ -4,19 +4,43 @@ Meghan Cilento and Mairead Heiger
 
 
 ### Project Outline
-The main goal of this project is to animate the trajectory of Voyager 1 as 
-well as plot its energy as it travels out of the solar system. 
+The main goal of this project is to animate the trajectory of Voyager 1 as it
+uses gravitational assists to travel out of our solar system. The following steps
+outline the intermediate stages to getting to that final animation:
 
-In order to generate the Voyager 1 path, we knew that we needed to first animate 
-the orbits of Jupiter and Saturn, as well as produce a hyperbolic, or slingshot, 
-orbit. We therefore began this project by plotting and animating different possible 
-orbital trajectories. The purpose of these plots was to explore the initial conditions 
-which produce such trajectories. Knowing the conditions which produce different 
-types of orbits allowed us to set the initial conditions for Jupiter and Saturn's 
-orbits, as well as for Voyager 1 as it approached the planets on its path. 
+1. Calculate and animate different types of Keplerian orbits
+2. Explore how different initial conditions affect slingshot trajectory
+3. Calculate the trajectory of Voyager 1
+4. Animate the trajectory of Voyager 1
+
+
+#### Stage 1
+In order to generate the trajectory of Voyager 1, we knew that we needed to first 
+animate the orbits of Earth, Jupiter and Saturn, as well as produce a hyperbolic, or 
+slingshot, orbit. We therefore began this project by plotting and animating 
+different possible Keplerian orbits to explore the initial conditions which produce 
+such trajectories. 
+
+The equations of motion for a planetary orbits are given by second order 
+differential equations which can be derived from the force of gravitational
+attraction between two celestial bodies:
+
+![ODEs](ODE.png)
+
+The two second order ODEs outlined in red were solved using the 4th order Runga 
+Kutta Method. This method was chosen over others because there is a minimal loss 
+of energy during the timescale of Voyager 1's trajectory. It was also easy to code, 
+and it is not an implicit method, so it was less computationally demanding. 
+
+Using the solutions to these equations, we were able to set initial conditions
+for position and velocity. Knowing that the tangential velocity of one object 
+with respect to another determines whether the object collides, orbits, or flies 
+off into space allowed us to generate the five different possible Keplarian orbits 
+by adjusting the initial velocity condition. Our main focus of this project is 
+on the hyperbolic orbit, which produces gravitational assists.
 
 The python notebook, `Final Project Code.ipynb`, generates the plots and
-animations for five different orbit types:
+animations for the five different orbit types:
 
 1. Collision Orbit
 2. Circular Orbit
@@ -24,16 +48,17 @@ animations for five different orbit types:
 4. Parabolic Orbit
 5. Hyperbolic Orbit
 
-The condition which determined which orbit Jupiter would follow was the initial 
-velocity. For all of these orbits, we kept the initial x-position constant at
-x0 = 7.4052e11, which is the semi-major axis of Jupiter's known orbit. As you can 
-see in the animations (all of which are saved in `Orbit Animations`), changing the
-initial velocity drastically changes which path Jupiter takes as it orbits the sun.
+In this notebook, we used Jupiter as an example planet. The equations for initial 
+velocity conditions extend to any two interacting objects, but in this case, we 
+set Jupiter at its perihelion location (x0 = 7.4052e11) and gave it different initial 
+tangential velocities to demonstrate how initial velocity affects final trajectory. 
+As you can see in the animations (all of which are saved in `Orbit Animations`), 
+changing the initial velocity drastically changes which path Jupiter takes as it 
+orbits the sun.
 
-The chosen initial velocity values are not arbitrary. We knew that The tangential 
-velocity of one object with respect to another determines whether the object 
-collides with the other object, goes into orbit, or flies off into space. 
-We used the following conditions to choose our initial velocity values: 
+The following equations provide the initial velocity constraints which determine
+the final path an object will take when it starts moving tangentially to another
+object.
 
 ![Velocity Conditions](Velocity_conditions.png)
 
@@ -44,3 +69,6 @@ The following known values were used in our calculations:
 **r** (semi-major axis) = 7.4052e11 m
 
 
+#### Stage 2
+#### Stage 3
+#### Stage 4
