@@ -14,7 +14,7 @@ outline the intermediate stages to getting to that final animation:
 4. Animate the trajectory of Voyager 1
 
 
-#### **Stage 1**
+#### **Part 1**
 In order to generate the trajectory of Voyager 1, we knew that we needed to first 
 animate the orbits of Earth, Jupiter and Saturn, as well as produce a hyperbolic, or 
 slingshot, orbit. We therefore began this project by plotting and animating 
@@ -69,6 +69,23 @@ The following known values were used in our calculations:
 **r** (semi-major axis) = 7.4052e11 m
 
 
-#### **Stage 2**
-#### **Stage 3**
-#### **Stage 4**
+#### **Part 2**
+
+A gravity assist (also called a slingshot) is a spacecraft maneuver that uses the relative motion between a planet and a spacecraft to accelerate the spacecraft. Gravity assists are most commonly used to change the direction or velocity of a spacecraft without using fuel. These maneuvers can be approximated as elastic collisions, in which the spacecraft "bounces" off the planet like one billiard ball bouncing off another. Because the planet is so massive compared to the spacecraft, the spacecraft can gain energy and accelerate while the planet loses a negligable amount of energy.
+
+We calculate, plot, and animate several different sample slingshot trajectories, demonstrating several uses of slingshots, including positive acceleration of the spacecraft, reversal of direction, orbit, and negative acceleration.
+
+We also made a GUI so that the reader can make their own gravity assist. It takes user input for initial conditions (initial position and velocity of planet and satellite) and returns a plot of the trajectory of the planet and satellite given those conditions.
+
+The code uses a second order ODE that describes the motion of a satellite or probe in the presence of the planet, which we approximate as moving in a straight line at constant velocity (this is done more rigorously later). In this section, we use mock units. For example, an initial velocity might be three units per second, and the planet is 80 mass units / G, where G is the gravitational constant. These units allowed us to explore gravity assists without worrying about the huge distance scale on which gravity assists actually occur. 
+
+#### **Part 3**
+Voyager 1 does two gravity assists, first around Jupiter and then around Saturn, before exiting the solar system. Both assists are to gain speed and to change direction. The actual, historical trajectory of Voyager 1 (and 2) is pictured below:
+
+![Voyager 1](https://qph.fs.quoracdn.net/main-qimg-cd6e62f8ca9f89d87ecdb0f372056673)
+
+We first calculated the position and velocity of Earth, Jupiter, and Saturn at every point in their orbit, and then modified the initial conditions (positions of planets) on the day of the launch to calculate Voyager's trajectory given those initial conditions. We also plotted the velocity of Voyager over time, and its velocity as a function of its distance from the Sun. These plots show the benefits and effects of the gravity assists clearly.
+
+Because gravity assists are highly dependent on the initial positions of the planets, we were unable to replicate the exact trajectory of Voyager 1. However, our "Voyager 1" does complete flybys of both Jupiter and Saturn, with an additional flyby of Earth! With the correct initial positions of the planets (for which we would need accurate historical data), our Voyager 1 could have completed the historical trajectory.
+
+The difficulty we had here speaks to the difficulty of gravity assists in general--rarely do planets align well enough to complete even simple gravity assists like Voyager 1, much less several like Voyager 2. More commonly, more complicated trajectories are necessary (like those of [Galileo](https://en.wikipedia.org/wiki/Gravity_assist#/media/File:Animation_of_Galileo_trajectory.gif) or [Rosetta](https://en.wikipedia.org/wiki/Gravity_assist#/media/File:Animation_of_Rosetta_trajectory.gif)).
